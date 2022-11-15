@@ -1,22 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    <input type="radio">Location</input>
-    <input type="radio">Park</input>
-    <br>
-    <button type="submit">submit</button>
 
-    <h5>Choose by state</h5>
-    <select name="states" id="states">
-        <option value="">By State</option>
-    </select>
-    <script src="locationData.js"></script>
-    <script src="parkTypeData.js"></script>
+<body>
+    <h5>Choose by:</h5>
+    <div id="menuChoices">
+        <input type="radio" name="option" id="state">Location Type</input>
+        <input type="radio" name="option" id="park">Park Type</input>
+    </div>
+    <br><br>
+    <div id="firstMenu" style="display: none;">
+        <select name="menuOne" id="menuOne">
+            <option value="">Select Option</option>
+        </select>
+    </div>
+    <div id="secondMenu" style="display: none;">
+        <select name="menuTwo" id="menuTwo">
+        </select>
+    </div>
+
+    
+    <script src="scripts/parkTypeData.js"></script>
+    <script src="scripts/locationData.js"></script>
+    <script src="scripts/nationalParkData.js"></script>
+    <script src="scripts/optionTypeSelector.js"></script>
 </body>
+
 </html>
