@@ -56,4 +56,4 @@ let parks = [{park: "Denali", location: "AL" },
 {park: "North Cascades", location: "WA" },
 {park: "Olympic", location: "WA" },
 {park: "Grand Teton", location: "WY" },
-]
+];
