@@ -560,22 +560,29 @@ window.onload = function () {
 
                 let mountName = document.createElement('h3');
                 mountName.innerText = `${mountainsArray[i].name}`;
+                mountName.style.textAlign = 'center';
                 mountainDisplay.appendChild(mountName);
 
                 let elevation = document.createElement('p');
                 elevation.innerText = `Elevation: ${mountainsArray[i].elevation}`;
+                elevation.style.paddingLeft = '75px';
+                elevation.style.paddingTop = '50px';
                 mountainDisplay.appendChild(elevation);
 
                 let effort = document.createElement('p');
                 effort.innerText = `Effort: ${mountainsArray[i].effort}`;
+                effort.style.paddingLeft = '75px';
                 mountainDisplay.appendChild(elevation);
 
                 let mountLocation = document.createElement('p');
-                mountLocation.innerText = `Coordinates - Latitude: ${mountainsArray[i].coords.lat}, Longitude: ${mountainsArray[i].coords.lng}`;
+                mountLocation.innerText = `Coordinates - Latitude: ${mountainsArray[i].coords.lat}, 
+                Longitude: ${mountainsArray[i].coords.lng}`;
+                mountLocation.style.paddingLeft = '75px';
                 mountainDisplay.appendChild(mountLocation);
 
                 let description = document.createElement('p');
                 description.innerText = `Description: ${mountainsArray[i].desc}`;
+                description.style.paddingLeft = '75px';
                 mountainDisplay.appendChild(description);
 
                 const paraOne = document.createElement('p');
@@ -584,6 +591,7 @@ window.onload = function () {
                     voluptatibus magnam nostrum similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
                     quam praesentium nihil sed obcaecati facere fuga laudantium magni labore voluptate reprehenderit,
                     veritatis tempora. Ut autem, molestiae architecto laudantium quidem deserunt.`;
+                paraOne.style.paddingLeft = '75px';
                 mountainDisplay.appendChild(paraOne);
 
                 const paraTwo = document.createElement('p');
@@ -592,6 +600,7 @@ window.onload = function () {
                     voluptatibus magnam nostrum similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
                     quam praesentium nihil sed obcaecati facere fuga laudantium magni labore voluptate reprehenderit,
                     veritatis tempora. Ut autem, molestiae architecto laudantium quidem deserunt.`;
+                paraTwo.style.paddingLeft = '75px';
                 mountainDisplay.appendChild(paraTwo);
 
                 break;
