@@ -6979,13 +6979,13 @@ window.onload = function () {
     function secondMenuList() {
         divElementTwo.style.display = 'block';
         let selectOption = menuListOne.options[menuListOne.selectedIndex].text;
-        let optionsList = [];
         while (menuListTwo.options.length) {
             menuListTwo.remove(0);
         }
 
         let defaultOpt = new Option('Select Options');
         menuListTwo.appendChild(defaultOpt);
+
         if (parkChecked.checked) {
             for (let i = 0; i < nationalParksArray.length; i++) {
 
@@ -7008,19 +7008,29 @@ window.onload = function () {
         }
     }
 
+
     function displayPark() {
         //parkDisplay.empty();
         let parkDisplay = document.getElementById('parkDisplay');
+        let parkHeader = document.getElementById('parkHeader');
+
+        // if(parkHeader.firstChild) {
+        //     parkHeader.remove(parkHeader.firstChild);
+        // }
         while (parkDisplay.firstChild) {
             parkDisplay.removeChild(parkDisplay.firstChild);
         }
+
         let optionSelected = menuListTwo.options[menuListTwo.selectedIndex].text;
         for (let i = 0; i < nationalParksArray.length; i++) {
             if (nationalParksArray[i].LocationName == optionSelected) {
                 {
+                    parkHeader.remove(parkHeader.firstChild);
                     let parkName = document.createElement('h3');
                     parkName.innerText = `${nationalParksArray[i].LocationName}`;
-                    parkDisplay.appendChild(parkName);
+                    parkName.style.textAlign = 'center';
+                    parkHeader.appendChild(parkName);
+
 
                     let parkAddress = document.createElement('p');
                     parkAddress.innerText = `Address: ${nationalParksArray[i].Address}`;

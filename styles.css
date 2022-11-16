@@ -1,0 +1,21 @@
+nav{
+    color: black;
+    width: 100px;
+    height: 100px;
+}
+li{
+    text-decoration: none;
+}
+.divClass{
+    padding-left: 615px;
+    margin: auto;
+}
+.divHeader{
+    padding-left: 655px;
+}
+.jsAppend{
+    padding-left: 150px;
+}
+select{
+    width: 300px;
+}

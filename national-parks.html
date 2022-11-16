@@ -6,33 +6,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+
+    <head>
+        <nav>
+            <ul>
+                <li>Home</li>
+                <li>Parks</li>
+                <li>Mountains</li>
+            </ul>
+        </nav>
+    </head>
     <main>
-        <h2>Choose by:</h2>
-        <div id="menuChoices">
-            <input type="radio" name="option" id="state">Location Type</input>
+        <h2 style="text-align: center;">Choose by:</h2>
+        <div class="divHeader" id="menuChoices">
+            <input type="radio" name="option" id="state" style="padding-left: 100px;">Location Type</input>
             <input type="radio" name="option" id="park">Park Type</input>
         </div>
         <br><br>
-        <div id="firstMenu" style="display: none;">
+        <div class="divClass" id="firstMenu" style="display: none;">
             <select name="menuOne" id="menuOne">
                 <option value="">Select Option</option>
             </select>
         </div>
-        <div id="secondMenu" style="display: none;">
+        <div class="divClass" id="secondMenu" style="display: none;">
             <select name="menuTwo" id="menuTwo">
             </select>
         </div>
-
-        <div id="parkDisplay">
-        </div>
+        <br><br>
+        <div id="parkHeader"></div>
+        <br>
+        <div class="jsAppend" id="parkDisplay"></div>
+        <br><br>
 
     </main>
 
+
     <script src="scripts/parkTypeSelector.js"></script>
 
+    <footer>
+
+    </footer>
 </body>
 
 </html>
