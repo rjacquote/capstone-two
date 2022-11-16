@@ -6948,6 +6948,7 @@ window.onload = function () {
     statesChecked.onclick = firstMenuList;
 
     menuListOne.onchange = secondMenuList;
+    menuListTwo.onchange = displayPark;
 
     function firstMenuList() {
 
@@ -7002,6 +7003,82 @@ window.onload = function () {
                 if (nationalParksArray[i].State.includes(selectOption)) {
                     let options = new Option(nationalParksArray[i].LocationName);
                     menuListTwo.appendChild(options);
+                }
+            }
+        }
+    }
+
+    function displayPark() {
+        //parkDisplay.empty();
+        let parkDisplay = document.getElementById('parkDisplay');
+        while (parkDisplay.firstChild) {
+            parkDisplay.removeChild(parkDisplay.firstChild);
+        }
+        let optionSelected = menuListTwo.options[menuListTwo.selectedIndex].text;
+        for (let i = 0; i < nationalParksArray.length; i++) {
+            if (nationalParksArray[i].LocationName == optionSelected) {
+                {
+                    let parkName = document.createElement('h3');
+                    parkName.innerText = `${nationalParksArray[i].LocationName}`;
+                    parkDisplay.appendChild(parkName);
+
+                    let parkAddress = document.createElement('p');
+                    parkAddress.innerText = `Address: ${nationalParksArray[i].Address}`;
+                    parkDisplay.appendChild(parkAddress);
+
+                    let parkCity = document.createElement('p');
+                    parkCity.innerText = `City: ${nationalParksArray[i].City}`;
+                    parkDisplay.appendChild(parkCity);
+
+                    let parkState = document.createElement('p');
+                    parkState.innerText = `State: ${nationalParksArray[i].State}`;
+                    parkDisplay.appendChild(parkState);
+
+                    let parkZipCode = document.createElement('p');
+                    parkZipCode.innerText = `Zip Code: ${nationalParksArray[i].ZipCode}`;
+                    parkDisplay.appendChild(parkZipCode);
+
+                    let parkPhone = document.createElement('p');
+                    parkPhone.innerText = `Phone: ${nationalParksArray[i].Phone}`;
+                    parkDisplay.appendChild(parkPhone);
+
+                    let parkFax = document.createElement('p');
+                    parkFax.innerText = `Fax: ${nationalParksArray[i].Fax}`;
+                    parkDisplay.appendChild(parkFax);
+
+                    let parkVisit = document.createElement('p');
+                    parkVisit.innerText = `Visit: ${nationalParksArray[i].Visit}`;
+                    parkDisplay.appendChild(parkVisit);
+
+                    let parkLatitude = document.createElement('p');
+                    parkLatitude.innerText = `Latitude: ${nationalParksArray[i].Latitude}`;
+                    parkDisplay.appendChild(parkLatitude);
+
+                    let parkLong = document.createElement('p');
+                    parkLong.innerText = `Longitude: ${nationalParksArray[i].Longitude}`;
+                    parkDisplay.appendChild(parkLong);
+
+                    let parkLocation = document.createElement('p');
+                    parkLocation.innerText = `Location - Coordinates: ${nationalParksArray[i].Location.coordinates}, type: ${nationalParksArray[i].Location.type}`;
+                    parkDisplay.appendChild(parkLocation);
+
+                    const paraOne = document.createElement('p');
+                    paraOne.innerText = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis magnam quasi animi iure, repellendus
+                    expedita, blanditiis sit sint ut adipisci aspernatur corrupti. Ex corrupti necessitatibus beatae
+                    voluptatibus magnam nostrum similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
+                    quam praesentium nihil sed obcaecati facere fuga laudantium magni labore voluptate reprehenderit,
+                    veritatis tempora. Ut autem, molestiae architecto laudantium quidem deserunt.`;
+                    parkDisplay.appendChild(paraOne);
+
+                    const paraTwo = document.createElement('p');
+                    paraTwo.innerText = `Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis magnam quasi animi iure, repellendus
+                    expedita, blanditiis sit sint ut adipisci aspernatur corrupti. Ex corrupti necessitatibus beatae
+                    voluptatibus magnam nostrum similique. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
+                    quam praesentium nihil sed obcaecati facere fuga laudantium magni labore voluptate reprehenderit,
+                    veritatis tempora. Ut autem, molestiae architecto laudantium quidem deserunt.`;
+                    parkDisplay.appendChild(paraTwo);
+
+                    break;
                 }
             }
         }

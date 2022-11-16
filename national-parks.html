@@ -9,27 +9,30 @@
 </head>
 
 <body>
-    <h5>Choose by:</h5>
-    <div id="menuChoices">
-        <input type="radio" name="option" id="state">Location Type</input>
-        <input type="radio" name="option" id="park">Park Type</input>
-    </div>
-    <br><br>
-    <div id="firstMenu" style="display: none;">
-        <select name="menuOne" id="menuOne">
-            <option value="">Select Option</option>
-        </select>
-    </div>
-    <div id="secondMenu" style="display: none;">
-        <select name="menuTwo" id="menuTwo">
-        </select>
-    </div>
+    <main>
+        <h2>Choose by:</h2>
+        <div id="menuChoices">
+            <input type="radio" name="option" id="state">Location Type</input>
+            <input type="radio" name="option" id="park">Park Type</input>
+        </div>
+        <br><br>
+        <div id="firstMenu" style="display: none;">
+            <select name="menuOne" id="menuOne">
+                <option value="">Select Option</option>
+            </select>
+        </div>
+        <div id="secondMenu" style="display: none;">
+            <select name="menuTwo" id="menuTwo">
+            </select>
+        </div>
 
-    
-    <script src="scripts/parkTypeData.js"></script>
-    <script src="scripts/locationData.js"></script>
-    <script src="scripts/nationalParkData.js"></script>
+        <div id="parkDisplay">
+        </div>
+
+    </main>
+
     <script src="scripts/optionTypeSelector.js"></script>
+
 </body>
 
 </html>
