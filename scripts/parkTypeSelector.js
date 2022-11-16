@@ -7060,7 +7060,6 @@ window.onload = function () {
 
                     let parkLocation = document.createElement('p');
                     parkLocation.innerText = `Location - Coordinates: ${nationalParksArray[i].Location.coordinates}, type: ${nationalParksArray[i].Location.type}`;
-
                     parkDisplay.appendChild(parkLocation);
 
                     const paraOne = document.createElement('p');
