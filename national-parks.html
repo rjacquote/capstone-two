@@ -32,11 +32,16 @@
     </header>
     <main>
         <h3 style="text-align: center;">Choose by:</h3>
-        <div class="divHeader" id="menuChoices">
-            <input type="radio" name="option" id="state" style="padding-left: 100px;">Location Type</input>
+        <div class="divHeaderParks" id="menuChoices">
+            <input type="radio" name="option" id="state">Location Type</input>
             <input type="radio" name="option" id="park">Park Type</input>
+            <input type="radio" name="option" id="search">Search Bar</input>
         </div>
-        <br><br>
+
+        <div class ="divClass" id="searchBar" style="padding-left: 600px; margin-top: 50px; display: none;">
+            <input type="text" name="searchBar" id="searchInput" placeholder="Search Park Name" style="width: 300px;">
+        </div>
+
         <div class="divClass" id="firstMenu" style="display: none;">
             <select name="menuOne" id="menuOne">
                 <option value="">Select Option</option>
@@ -58,9 +63,9 @@
 
     <script src="scripts/parkTypeSelector.js" type="module"></script>
 
-
+<footer></footer>
 </body>
 
-<footer></footer>
+
 
 </html>

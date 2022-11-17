@@ -1,6 +1,6 @@
-import {parkTypesArray} from './parkTypeData.js';
-import {locationsArray} from './locationData.js';
-import {nationalParksArray} from './nationalParkData.js';
+import { parkTypesArray } from './parkTypeData.js';
+import { locationsArray } from './locationData.js';
+import { nationalParksArray } from './nationalParkData.js';
 
 window.onload = function () {
 
@@ -6941,18 +6941,23 @@ window.onload = function () {
 
     let parkChecked = document.getElementById('park');
     let statesChecked = document.getElementById('state');
+    let searchChecked = document.getElementById('search');
 
     let menuListOne = document.getElementById('menuOne');
     let menuListTwo = document.getElementById('menuTwo');
+    let searchInput = document.getElementById('searchInput');
 
     const divElementOne = document.getElementById('firstMenu');
     const divElementTwo = document.getElementById('secondMenu');
+    const divElementThree = document.getElementById('searchBar');
 
     parkChecked.onclick = firstMenuList;
     statesChecked.onclick = firstMenuList;
+    searchChecked.onclick = searchBarNav;
 
     menuListOne.onchange = secondMenuList;
     menuListTwo.onchange = displayPark;
+    searchInput.onkeyup = searchBarNav;
 
     function firstMenuList() {
 
@@ -7012,6 +7017,16 @@ window.onload = function () {
         }
     }
 
+    function searchBarNav() {
+        divElementOne.style.display = 'none';
+        divElementTwo.style.display = 'none';
+        divElementThree.style.display = 'block';
+    }
+
+    function searchBarDisplay() {
+        let filter = searchInput.value.toUpperCase();
+
+    }
 
     function displayPark() {
         //parkDisplay.empty();
