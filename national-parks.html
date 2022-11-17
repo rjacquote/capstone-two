@@ -7,19 +7,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- <style>
+        div{
+            outline: 1px solid black;
+        }
+    </style> -->
 </head>
 
 <body>
 
-    <head>
+    <header>
+        <div class="hero-image">
+            <div class="hero-text">
+                <h1 style="font-size:50px">National Parks</h1>
+            </div>
+        </div>
         <nav>
             <ul>
-                <li>Home</li>
-                <li>Parks</li>
-                <li>Mountains</li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="national-parks.html">National Parks</a></li>
+                <li><a href="mountains.html">Mountains</a></li>
             </ul>
         </nav>
-    </head>
+    </header>
     <main>
         <h2 style="text-align: center;">Choose by:</h2>
         <div class="divHeader" id="menuChoices">
@@ -32,24 +42,25 @@
                 <option value="">Select Option</option>
             </select>
         </div>
+
         <div class="divClass" id="secondMenu" style="display: none;">
             <select name="menuTwo" id="menuTwo">
             </select>
         </div>
-        <br><br>
-        <div id="parkHeader"></div>
-        <br>
-        <div class="jsAppend" id="parkDisplay"></div>
-        <br><br>
 
+        <!-- <div id="parkHeader"></div> -->
+        <section>
+            <h3 id="parkHeader" style="text-align: center; margin-bottom: 50px;"></h3>
+            <div class="jsAppend" id="parkDisplay"></div>
+        </section>
     </main>
 
 
-    <script src="scripts/parkTypeSelector.js"></script>
+    <script src="scripts/parkTypeSelector.js" type="module"></script>
 
-    <footer>
 
-    </footer>
 </body>
+
+<footer></footer>
 
 </html>

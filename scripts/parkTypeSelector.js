@@ -1,79 +1,83 @@
+import {parkTypesArray} from './parkTypeData.js';
+import {locationsArray} from './locationData.js';
+import {nationalParksArray} from './nationalParkData.js';
+
 window.onload = function () {
 
-    const parkTypesArray = [
-        "National Park",
-        "National Monument",
-        "Recreation Area",
-        "Scenic Trail",
-        "Battlefield",
-        "Historic",
-        "Memorial",
-        "Preserve",
-        "Island",
-        "River",
-        "Seashore",
-        "Trail",
-        "Parkway"
-    ]
-    const locationsArray = [
-        "Alabama",
-        "Alaska",
-        "American Samoa",
-        "Arizona",
-        "Arkansas",
-        "California",
-        "Colorado",
-        "Connecticut",
-        "Delaware",
-        "DC",
-        "Florida",
-        "Georgia",
-        "Guam",
-        "Hawaii",
-        "Idaho",
-        "Illinois",
-        "Indiana",
-        "Iowa",
-        "Kansas",
-        "Kentucky",
-        "Louisiana",
-        "Maine",
-        "Maryland",
-        "Massachusetts",
-        "Michigan",
-        "Minnesota",
-        "Mississippi",
-        "Missouri",
-        "Montana",
-        "Nebraska",
-        "Nevada",
-        "New Hampshire",
-        "New Jersey",
-        "New Mexico",
-        "New York",
-        "North Carolina",
-        "North Dakota",
-        "Ohio",
-        "Oklahoma",
-        "Oregon",
-        "Pennsylvania",
-        "Puerto Rico",
-        "Rhode Island",
-        "South Carolina",
-        "South Dakota",
-        "Tennessee",
-        "Texas",
-        "Utah",
-        "Vermont",
-        "Virgin Islands",
-        "Virginia",
-        "Washington",
-        "West Virginia",
-        "Wisconsin",
-        "Wyoming"
-    ]
+    /* // const parkTypesArray = [
+    //     "National Park",
+    //     "National Monument",
+    //     "Recreation Area",
+    //     "Scenic Trail",
+    //     "Battlefield",
+    //     "Historic",
+    //     "Memorial",
+    //     "Preserve",
+    //     "Island",
+    //     "River",
+    //     "Seashore",
+    //     "Trail",
+    //     "Parkway"
+    // ] */
+    /* // const locationsArray = [
+    //     "Alabama",
+    //     "Alaska",
+    //     "American Samoa",
+    //     "Arizona",
+    //     "Arkansas",
+    //     "California",
+    //     "Colorado",
+    //     "Connecticut",
+    //     "Delaware",
+    //     "DC",
+    //     "Florida",
+    //     "Georgia",
+    //     "Guam",
+    //     "Hawaii",
+    //     "Idaho",
+    //     "Illinois",
+    //     "Indiana",
+    //     "Iowa",
+    //     "Kansas",
+    //     "Kentucky",
+    //     "Louisiana",
+    //     "Maine",
+    //     "Maryland",
+    //     "Massachusetts",
+    //     "Michigan",
+    //     "Minnesota",
+    //     "Mississippi",
+    //     "Missouri",
+    //     "Montana",
+    //     "Nebraska",
+    //     "Nevada",
+    //     "New Hampshire",
+    //     "New Jersey",
+    //     "New Mexico",
+    //     "New York",
+    //     "North Carolina",
+    //     "North Dakota",
+    //     "Ohio",
+    //     "Oklahoma",
+    //     "Oregon",
+    //     "Pennsylvania",
+    //     "Puerto Rico",
+    //     "Rhode Island",
+    //     "South Carolina",
+    //     "South Dakota",
+    //     "Tennessee",
+    //     "Texas",
+    //     "Utah",
+    //     "Vermont",
+    //     "Virgin Islands",
+    //     "Virginia",
+    //     "Washington",
+    //     "West Virginia",
+    //     "Wisconsin",
+    //     "Wyoming"
+    // ] */
 
-    const nationalParksArray = [
+    /* const nationalParksArray = [
         {
             LocationID: "ABLI",
             LocationName: "Abraham Lincoln Birthplace National Historical Park",
@@ -6932,7 +6936,7 @@ window.onload = function () {
                 type: "Point"
             }
         }
-    ]
+    ] */
 
 
     let parkChecked = document.getElementById('park');
@@ -7020,17 +7024,13 @@ window.onload = function () {
         while (parkDisplay.firstChild) {
             parkDisplay.removeChild(parkDisplay.firstChild);
         }
-
+        // let parkName = document.createElement('h3');
         let optionSelected = menuListTwo.options[menuListTwo.selectedIndex].text;
         for (let i = 0; i < nationalParksArray.length; i++) {
             if (nationalParksArray[i].LocationName == optionSelected) {
                 {
-                    parkHeader.remove(parkHeader.firstChild);
-                    let parkName = document.createElement('h3');
-                    parkName.innerText = `${nationalParksArray[i].LocationName}`;
-                    parkName.style.textAlign = 'center';
-                    parkHeader.appendChild(parkName);
-
+                    parkHeader.innerText = `${nationalParksArray[i].LocationName}`;
+                    // parkHeader.style.textAlign = 'center';
 
                     let parkAddress = document.createElement('p');
                     parkAddress.innerText = `Address: ${nationalParksArray[i].Address}`;

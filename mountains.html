@@ -6,21 +6,41 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+    <header>
+        <div class="hero-image">
+            <div class="hero-text">
+                <h1 style="font-size:50px">National Parks</h1>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="national-parks.html">National Parks</a></li>
+                <li><a href="mountains.html">Mountains</a></li>
+            </ul>
+        </nav>
+    </header>
     <main>
-        <h2>Choose Mountain:</h2>
-        <div id="menuDiv">
-            <select name="menu" id="menu">
+        <h3 style="text-align: center;">Choose Mountain:</h3>
+        <div class="divHeader" id="menuDiv">
+            <select name="menu" id="menu" style="width: 200px;">
                 <option value="">Select Option</option>
             </select>
         </div>
-        <br><br>
-        <div id="mountainDisplay"></div>
+        <section>
+            <h3 id="mountHeader" style="text-align: center; margin-bottom: 50px;"></h3>
+            <div class="jsAppend" id="mountainDisplay"><img src="" alt="" style="float: right;" id="imageElement"></div>
+        </section>
+
     </main>
 
-    <script src="scripts/mountainTypeSelector.js"></script>
+    <script src="scripts/mountainTypeSelector.js" type="module"></script>
 </body>
+
+<footer></footer>
 
 </html>
