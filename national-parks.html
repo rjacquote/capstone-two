@@ -30,17 +30,22 @@
             </ul>
         </nav>
     </header>
+
     <main>
         <h3 style="text-align: center;">Choose by:</h3>
-        <div class="divHeaderParks" id="menuChoices">
+        <div class="divHeader" id="menuChoices">
             <input type="radio" name="option" id="state">Location Type</input>
             <input type="radio" name="option" id="park">Park Type</input>
-            <input type="radio" name="option" id="search">Search Bar</input>
+            <!-- <input type="radio" name="option" id="search">Search Bar</input> -->
         </div>
 
-        <div class ="divClass" id="searchBar" style="padding-left: 600px; margin-top: 50px; display: none;">
-            <input type="text" name="searchBar" id="searchInput" placeholder="Search Park Name" style="width: 300px;">
-        </div>
+        <!-- <form action="" autocomplete="off">
+            <div class="divClass" id="searchBar" style="padding-left: 600px; margin-top: 50px; display: none;">
+                <input type="search" name="searchBar" id="searchInput" placeholder="Search Park Name"
+                    style="width: 300px;">
+                <button type="button" id="searchButton">Enter</button>
+            </div>
+        </form> -->
 
         <div class="divClass" id="firstMenu" style="display: none;">
             <select name="menuOne" id="menuOne">
@@ -63,7 +68,8 @@
 
     <script src="scripts/parkTypeSelector.js" type="module"></script>
 
-<footer></footer>
+    <footer></footer>
+
 </body>
 
 
