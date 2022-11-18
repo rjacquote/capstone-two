@@ -16,6 +16,14 @@ window.onload = function () {
 
     }
 
+    async function getSunsetForMountain(mount) {
+        let response = await fetch(
+            `https://api.sunrise-sunset.org/json?lat=${mount.coords.lat}&lng=${mount.coords.lng}&date=today`);
+        let data = await response.json();
+        return data;
+    }
+
+
     function displayMountain() {
         let mountainDisplay = document.getElementById('mountainDisplay');
         let mountHeader = document.getElementById('mountHeader');
@@ -23,14 +31,59 @@ window.onload = function () {
 
         let imageElement = document.getElementById('imageElement');
 
-    
+
         while (mountainDisplay.firstChild) {
             mountainDisplay.removeChild(mountainDisplay.firstChild);
         }
-        // let optionSelected = mountMenu.options[mountMenu.selectedIndex].text;
+
+
 
         for (let i = 0; i < mountainsArray.length; i++) {
             if (mountainsArray[i].name == optionSelected) {
+
+                getSunsetForMountain(mountainsArray[i]).then(data => {
+                    console.log(data.results);
+
+                    let beginTwilight = document.createElement('p');
+                    beginTwilight.innerText = `Astronomical Twilight Begin: ${data.results.astronomical_twilight_begin}`;
+                    mountainDisplay.appendChild(beginTwilight);
+
+                    let endTwilight = document.createElement('p');
+                    endTwilight.innerText = `Astronomical Twilight End: ${data.results.astronomical_twilight_end}`
+                    mountainDisplay.appendChild(endTwilight);
+                    
+                    let civilBegin = document.createElement('p');
+                    civilBegin.innerText = `Civil Twilight Begin: ${data.results.civil_twilight_begin}`;
+                    mountainDisplay.appendChild(civilBegin);
+
+                    let civilEnd = document.createElement('p');
+                    civilEnd.innerText = `Civil Twilight End: ${data.results.civil_twilight_end}`;
+                    mountainDisplay.appendChild(civilEnd);
+
+                    let dayLength = document.createElement('p');
+                    dayLength.innerText = `Day Length: ${data.results.day_length}`;
+                    mountainDisplay.appendChild(dayLength);
+
+                    let nauticalBegin = document.createElement('p');
+                    nauticalBegin.innerText = `Nautical Begin: ${data.results.nautical_twilight_begin}`;
+                    mountainDisplay.appendChild(nauticalBegin);
+            
+                    let nauticalEnd = document.createElement('p');
+                    nauticalEnd.innerText = `Nautical End: ${data.results.nautical_twilight_end}`;
+                    mountainDisplay.appendChild(nauticalEnd);
+
+                    let solarNoon = document.createElement('p');
+                    solarNoon.innerText = `Solar Noon: ${data.results.nautical_solar_noon}`;
+                    mountainDisplay.appendChild(solarNoon);
+
+                    let sunRise = document.createElement('p');
+                    sunRise.innerText = `Sunrise: ${data.results.sunrise}`;
+                    mountainDisplay.appendChild(sunRise);
+                    
+                    let sunSet = document.createElement('p');
+                    sunSet.innerText = `Sunset: ${data.results.sunset}`;
+                    mountainDisplay.appendChild(sunSet);
+                });
 
                 imageElement.src = `./images/${mountainsArray[i].img}`;
                 console.log(imageElement.src);
@@ -56,6 +109,9 @@ window.onload = function () {
                 Longitude: ${mountainsArray[i].coords.lng}`;
                 // mountLocation.style.paddingLeft = '75px';
                 mountainDisplay.appendChild(mountLocation);
+
+                // imageElement.src = `./images/${mountainsArray[i].img}`;
+                // console.log(imageElement.src);
 
                 let description = document.createElement('p');
                 description.innerText = `Description: ${mountainsArray[i].desc}`;
